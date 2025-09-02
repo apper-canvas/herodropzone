@@ -32,7 +32,7 @@ const FilePreviewModal = ({ file, isOpen, onClose }) => {
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-gray-700">
             <div>
-              <h3 className="text-lg font-semibold text-white truncate">{file.name}</h3>
+<h3 className="text-lg font-semibold text-white truncate">{file.name}</h3>
               <div className="flex items-center gap-4 text-sm text-gray-400 mt-1">
                 <span>{formatFileSize(file.size)}</span>
                 <span className="capitalize">{file.type}</span>

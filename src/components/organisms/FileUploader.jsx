@@ -32,8 +32,10 @@ const FileUploader = () => {
     try {
       setLoading(true);
       setError("");
+setLoading(true);
       const loadedFiles = await fileService.getAll();
       setFiles(loadedFiles);
+      setLoading(false);
     } catch (err) {
       console.error("Error loading files:", err);
       setError("Failed to load files");
@@ -68,7 +70,7 @@ const FileUploader = () => {
       // Create file object
       const fileId = generateFileId();
       const fileObj = {
-        id: fileId,
+id: fileId,
         name: file.name,
         size: file.size,
         type: file.type,
@@ -140,13 +142,15 @@ const FileUploader = () => {
       });
 
       // Create the file record
-      const savedFile = await fileService.create({
+const savedFile = await fileService.create({
         name: fileObj.name,
         size: fileObj.size,
         type: fileObj.type,
         status: "completed",
         progress: 100,
-        preview: fileObj.preview
+        preview: fileObj.preview,
+        speed: fileObj.speed || 0,
+        timeRemaining: 0
       });
 
       // Update with completed status

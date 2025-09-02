@@ -48,14 +48,14 @@ const FileCard = ({
         {/* File Info */}
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-1">
-            <h4 className="font-medium text-white truncate">{file.name}</h4>
+<h4 className="font-medium text-white truncate">{file.name}</h4>
             <Badge variant={getStatusBadgeVariant(file.status)}>
               <ApperIcon name={statusIcon} size={12} className="mr-1" />
               {file.status}
             </Badge>
           </div>
           
-          <div className="flex items-center gap-4 text-sm text-gray-400 mb-2">
+<div className="flex items-center gap-4 text-sm text-gray-400 mb-2">
             <span>{formatFileSize(file.size)}</span>
             <span className="capitalize">{file.type.split("/")[0]}</span>
             {file.uploadedAt && (
